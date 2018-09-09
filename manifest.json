@@ -1,0 +1,18 @@
+{
+"manifest_version": 2,
+  "name": "jk",
+  "version": "1.0",
+
+  "description": "Adds a basic Vim-like navigation. Supported shortcuts: j, k, gg, G",
+
+  "icons": {
+    "48": "icons/jk-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["node_modules/mousetrap/mousetrap.min.js","main.js"]
+    }
+  ]
+}
