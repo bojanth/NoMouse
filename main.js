@@ -1,31 +1,50 @@
-Config = {
-    steps: 30
+MovementConfig = {
+    smallStep: 10,
+    mediumStep: 30,
 };
 
 Mousetrap.bind("j", function() {
-    Scroller.scrollDown();
+    Move.down();
 });
 Mousetrap.bind("k", function() {
-    Scroller.scrollUp();
+    Move.up();
 });
-Mousetrap.bind("G", function() {
-    Scroller.scrollBottom();
+Mousetrap.bind("h", function() {
+    Move.left();
+});
+Mousetrap.bind("l", function() {
+    Move.right();
 });
 Mousetrap.bind("g g", function() {
-    Scroller.scrollTop();
+    Move.top();
+});
+Mousetrap.bind("G", function() {
+    Move.bottom();
+});
+Mousetrap.bind("H", function() {
+    history.back();
+});
+Mousetrap.bind("L", function() {
+    history.forward();
 });
 
-Scroller = {
-    scrollDown: function () {
-        window.scroll(window.scrollX, window.scrollY + Config.steps)
+Move = {
+    down: function () {
+        window.scroll(window.scrollX, window.scrollY + MovementConfig.mediumStep)
     },
-    scrollUp: function () {
-        window.scroll(window.scrollX, window.scrollY - Config.steps)
+    up: function () {
+        window.scroll(window.scrollX, window.scrollY - MovementConfig.mediumStep)
     },
-    scrollTop: function () {
+    left: function () {
+        window.scroll(window.scrollX - MovementConfig.smallStep, window.scrollY)
+    },
+    right: function () {
+        window.scroll(window.scrollX + MovementConfig.smallStep, window.scrollY)
+    },
+    top: function () {
         window.scroll(window.scrollX, 0);
     },
-    scrollBottom: function () {
+    bottom: function () {
         window.scroll(window.scrollX, document.body.scrollHeight);
     }
 };

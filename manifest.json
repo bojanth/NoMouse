@@ -1,9 +1,9 @@
 {
 "manifest_version": 2,
   "name": "NoMouse",
-  "version": "1.01",
+  "version": "1.0.2",
 
-  "description": "Adds a basic Vim-like navigation. Supported shortcuts: j, k, gg, G",
+  "description": "Adds a basic Vim-like navigation.",
 
   "icons": {
     "48": "icons/nm-48.png",
